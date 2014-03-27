@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;com.example.gles_test&apos; to &apos;DG.maincode.gles_test&apos;&#x0D;&#x0A;- Original project: &apos;GLES_test&apos;&#x0D;&#x0A;- Original element: &apos;GLES_test/src/com.example.gles_test&apos;&#x0D;&#x0A;- Renamed element: &apos;GLES_test/src/DG.maincode.gles_test&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;com.example.gles_test&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src&lt;com.example.gles_test" name="DG.maincode.gles_test" qualified="false" references="true" stamp="1395935039702" textual="false" version="1.0"/>
+</session>
