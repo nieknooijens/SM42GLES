@@ -68,6 +68,17 @@ public class STLTriagle {
 	public void setAlpha(float alpha) {
 		Alpha = alpha;
 	}
+	public float[] toFloatData() {
+		float[] floatData = new float[7];
+		floatData[0] = getX();
+		floatData[1] = getY();
+		floatData[2] = getZ();
+		floatData[3] = getRed();
+		floatData[4] = getGreen();
+		floatData[5] = getBlue();
+		floatData[6] = getAlpha();
+		return floatData;
+	}
 	
 	
 	
