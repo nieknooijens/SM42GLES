@@ -2,7 +2,6 @@ package DG.maincode.managers;
 
 import java.util.HashMap;
 import DG.maincode.STLObjecten.STLObject;
-import DG.maincode.STLObjecten.STLTriagle;
 
 public class STLTriagleManager {	
 	static private HashMap<String,STLObject> STLObjecten;
@@ -11,8 +10,8 @@ public class STLTriagleManager {
 		STLObjecten = new HashMap<String, STLObject>();
 	}
 	
-	static public void addNewObject(HashMap<Integer, STLTriagle> sTLTriagles, String name, int iD){
-		STLObjecten.put(name, new STLObject(sTLTriagles, name, iD));
+	static public void addNewObject(HashMap<Integer, String> sTLTriagles, String name, int iD){
+		
 	}
 	
 }

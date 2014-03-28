@@ -1,0 +1,7 @@
+package DG.maincode.managers;
+
+import java.util.HashMap;
+
+public class STLTriagleManager {
+	private HashMap	STLObjects; 
+}
