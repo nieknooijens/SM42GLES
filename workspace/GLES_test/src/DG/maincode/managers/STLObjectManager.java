@@ -1,9 +1,9 @@
-package DG.maincode.managers;
+package dg.maincode.managers;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import DG.maincode.STLObjecten.STLObject;
-import DG.maincode.STLObjecten.STLTriagle;
+import dg.maincode.STLObjecten.STLObject;
+import dg.maincode.STLObjecten.STLTriagle;
 
 public class STLObjectManager {	
 	static private HashMap<String,STLObject> STLObjecten;

@@ -1,4 +1,4 @@
-package DG.maincode.STLObjecten;
+package dg.maincode.STLObjecten;
 
 public class STLTriagle {
 	

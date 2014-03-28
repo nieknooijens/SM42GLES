@@ -1,4 +1,4 @@
-package DG.maincode.STLObjecten;
+package dg.maincode.STLObjecten;
 
 import java.util.ArrayList;
 
