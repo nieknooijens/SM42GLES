@@ -59,7 +59,7 @@ public class STLObjectManager {
 		//O2 dummy
 		sTLTriagles = new ArrayList<STLTriagle>();
 		sTLTriagles.add(new STLTriagle(-0.5f, -0.25f, 0.0f, 1.0f, 1.0f, 0.0f, 1.0f));
-		sTLTriagles.add(new STLTriagle(0.5f, -0.25f, 0.0f, 0.0f, 1.0f, 1.0f, 1.0f));
+		sTLTriagles.add(new STLTriagle(0.5f, -0.25f, 0.0f, 4.0f, 1.0f, 1.0f, 1.0f));
 		sTLTriagles.add(new STLTriagle(0.0f, 0.559016994f, 0.0f, 1.0f, 0.0f, 1.0f, 1.0f));
 		STLObjecten.put("O2",new STLObject(sTLTriagles, "O2", 1));
 		

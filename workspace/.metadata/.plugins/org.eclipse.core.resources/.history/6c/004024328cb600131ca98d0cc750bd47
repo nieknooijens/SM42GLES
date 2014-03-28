@@ -26,25 +26,11 @@ public class STLObjectManager {
 	
 	static public float[] FloatDataToFloatVerticesData(ArrayList<float[]> FloatData){
 		float[] VerticesData = new float[FloatData.size()*7];
-		int vdPosition = 0;
 		for(int i = 0;i < FloatData.size();i++){
-			VerticesData[vdPosition] = FloatData.get(i)[0];
-			vdPosition++;
-			VerticesData[vdPosition] = FloatData.get(i)[1];
-			vdPosition++;
-			VerticesData[vdPosition] = FloatData.get(i)[2];
-			vdPosition++;
-			VerticesData[vdPosition] = FloatData.get(i)[3];
-			vdPosition++;
-			VerticesData[vdPosition] = FloatData.get(i)[4];
-			vdPosition++;
-			VerticesData[vdPosition] = FloatData.get(i)[5];
-			vdPosition++;
-			VerticesData[vdPosition] = FloatData.get(i)[6];
-			vdPosition++;
+			VerticesData += FloatData.get(i);
 		}
 		
-		return VerticesData;
+		return null;
 	}
 	
 	static public void generateDummyObjects(){

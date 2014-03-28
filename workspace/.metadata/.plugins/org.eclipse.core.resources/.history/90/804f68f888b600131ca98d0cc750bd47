@@ -8,8 +8,6 @@ import java.util.ArrayList;
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 
-import dg.maincode.managers.STLObjectManager;
-
 import android.opengl.GLES20;
 import android.opengl.GLSurfaceView;
 import android.opengl.Matrix;
@@ -80,16 +78,58 @@ public class GLES2Render implements GLSurfaceView.Renderer
 	public GLES2Render()
 	{	
 		FloatBufferList = new ArrayList<FloatBuffer>();
-		STLObjectManager.generateDummyObjects();
 		// Define points for equilateral triangles.
 		
-		final float[] triangle1VerticesData = STLObjectManager.FloatDataToFloatVerticesData(STLObjectManager.getFloatDataFromObject("O1"));
+		// This triangle is red, green, and blue.
+		final float[] triangle1VerticesData = {
+				// X, Y, Z, 
+				// R, G, B, A
+	            -0.5f, -0.25f, 0.0f, 
+	            1.0f, 0.0f, 0.0f, 1.0f,
+	            
+	            // X, Y, Z, 
+				// R, G, B, A
+	            0.5f, -0.25f, 0.0f,
+	            0.0f, 0.0f, 1.0f, 1.0f,
+	            
+	            // X, Y, Z, 
+				// R, G, B, A
+	            0.0f, 0.559016994f, 0.0f, 
+	            0.0f, 1.0f, 0.0f, 1.0f};
 		
 		// This triangle is yellow, cyan, and magenta.
-		final float[] triangle2VerticesData = STLObjectManager.FloatDataToFloatVerticesData(STLObjectManager.getFloatDataFromObject("O2"));
+		final float[] triangle2VerticesData = {
+				// X, Y, Z, 
+				// R, G, B, A
+	            -0.5f, -0.25f, 0.0f, 
+	            1.0f, 1.0f, 0.0f, 1.0f,
+	            
+				// X, Y, Z, 
+				// R, G, B, A
+	            0.5f, -0.25f, 0.0f, 
+	            0.0f, 1.0f, 1.0f, 1.0f,
+	            
+				// X, Y, Z, 
+				// R, G, B, A
+	            0.0f, 0.559016994f, 0.0f, 
+	            1.0f, 0.0f, 1.0f, 1.0f};
 		
 		// This triangle is white, gray, and black.
-		final float[] triangle3VerticesData = STLObjectManager.FloatDataToFloatVerticesData(STLObjectManager.getFloatDataFromObject("O3"));
+		final float[] triangle3VerticesData = {
+				// X, Y, Z, 
+				// R, G, B, A
+	            -0.5f, -0.25f, 0.0f, 
+	            1.0f, 1.0f, 1.0f, 1.0f,
+	            
+				// X, Y, Z, 
+				// R, G, B, A
+	            0.5f, -0.25f, 0.0f, 
+	            0.5f, 0.5f, 0.5f, 1.0f,
+	            
+				// X, Y, Z, 
+				// R, G, B, A
+	            0.0f, 0.559016994f, 0.0f, 
+	            0.0f, 0.0f, 0.0f, 1.0f};
 		
 		// Initialize the buffers.
 		mTriangle1Vertices = ByteBuffer.allocateDirect(triangle1VerticesData.length * mBytesPerFloat)
@@ -291,7 +331,7 @@ public class GLES2Render implements GLSurfaceView.Renderer
         
         // Draw the triangle facing straight on.
         Matrix.setIdentityM(mModelMatrix, 0);
-        Matrix.rotateM(mModelMatrix, 0, angleInDegrees, 0.0f, 0.0f, 1.0f);        
+        Matrix.rotateM(mModelMatrix, 0, angleInDegrees, 0.0f, 0.0f, 0.0f);        
         drawTriangle(FloatBufferList.get(0));
         
         // Draw one translated a bit down and rotated to be flat on the ground.

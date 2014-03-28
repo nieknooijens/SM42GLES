@@ -44,7 +44,7 @@ public class STLObjectManager {
 			vdPosition++;
 		}
 		
-		return VerticesData;
+		return null;
 	}
 	
 	static public void generateDummyObjects(){
