@@ -4,14 +4,10 @@ import java.util.ArrayList;
 
 public class STLTriagle {
 	private ArrayList<STLSide> STLSides;
-	private String name;
-	private int ID;
 	
-	public STLTriagle(ArrayList<STLSide> sTLSides, String name, int iD) {
+	public STLTriagle(ArrayList<STLSide> sTLSides) {
 		super();
 		STLSides = sTLSides;
-		this.name = name;
-		ID = iD;
 	}
 	
 	public ArrayList<STLSide> getSTLTriagles() {
@@ -20,22 +16,6 @@ public class STLTriagle {
 	
 	public void setSTLTriagles(ArrayList<STLSide> sTLSides) {
 		STLSides = sTLSides;
-	}
-	
-	public String getName() {
-		return name;
-	}
-	
-	public void setName(String name) {
-		this.name = name;
-	}
-	
-	public int getID() {
-		return ID;
-	}
-	
-	public void setID(int iD) {
-		ID = iD;
 	}
 	
 	public ArrayList<float[]> getSTLObjectFloatData(){

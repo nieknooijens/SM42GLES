@@ -2,26 +2,38 @@ package dg.maincode.managers;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+
+import dg.maincode.STLObjecten.STLObject;
 import dg.maincode.STLObjecten.STLTriagle;
 import dg.maincode.STLObjecten.STLSide;
 
 public class STLObjectManager {	
-	static private HashMap<String,STLTriagle> STLObjecten;
+	static private HashMap<String,STLObject> STLObjecten;
 	static{
 		//anything static that needs to be initialized for this class;
-		STLObjecten = new HashMap<String, STLTriagle>();
+		STLObjecten = new HashMap<String, STLObject>();
 	}
 	
 	static public void addNewObject(ArrayList<STLSide> sTLSides, String name, int iD){
-		STLObjecten.put(name, new STLTriagle(sTLSides, name, iD));
+		//STLObjecten.put(name, new STLTriagle(sTLSides, name, iD));
 	}
 	
-	static public STLTriagle getObject(String name){
+	static public STLObject getObject(String name){
 		return STLObjecten.get(name);
 	}
 	
 	static public ArrayList<float[]> getFloatDataFromObject(String name){
-		return STLObjecten.get(name).getSTLObjectFloatData();
+		ArrayList<float[]> temp = new ArrayList<float[]>();
+		HashMap<Integer,STLTriagle> tempMap = STLObjecten.get(name).getSTLTriagle();
+		int i = 0;
+		STLTriagle t = null;
+		while((t = tempMap.get(i)) != null){
+			for(int y= 0;y < 3;i++){
+				temp.add(t.getSTLObjectFloatData().get(y));
+			}
+			i++;
+		}
+		return temp;
 	}
 	
 	static public float[] FloatDataToFloatVerticesData(ArrayList<float[]> FloatData){
@@ -49,26 +61,35 @@ public class STLObjectManager {
 	
 	static public void generateDummyObjects(){
 		
-		//O1 dummy
+		STLObject tempObj = new STLObject("Dummy 1");
+		STLTriagle tempTriagle = null;
+		
+		//T1 dummy
 		ArrayList<STLSide> sTLSides = new ArrayList<STLSide>();
 		sTLSides.add(new STLSide(-0.5f, -0.25f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f));
 		sTLSides.add(new STLSide(0.5f, -0.25f, 0.0f, 0.0f, 0.0f, 1.0f, 1.0f));
 		sTLSides.add(new STLSide(0.0f, 0.559016994f, 0.0f, 0.0f, 1.0f, 0.0f, 1.0f));
-		STLObjecten.put("O1",new STLTriagle(sTLSides, "O1", 0));
+		tempTriagle = new STLTriagle(sTLSides);
+		tempObj.addSTLTriagle(tempTriagle);
 		
-		//O2 dummy
+		//T2 dummy
 		sTLSides = new ArrayList<STLSide>();
 		sTLSides.add(new STLSide(-0.5f, -0.25f, 0.0f, 1.0f, 1.0f, 0.0f, 1.0f));
 		sTLSides.add(new STLSide(0.5f, -0.25f, 0.0f, 0.0f, 1.0f, 1.0f, 1.0f));
 		sTLSides.add(new STLSide(0.0f, 0.559016994f, 0.0f, 1.0f, 0.0f, 1.0f, 1.0f));
-		STLObjecten.put("O2",new STLTriagle(sTLSides, "O2", 1));
+		tempTriagle = new STLTriagle(sTLSides);
+		tempObj.addSTLTriagle(tempTriagle);
 		
-		//O3 dummy
+		//T3 dummy
 		sTLSides = new ArrayList<STLSide>();
 		sTLSides.add(new STLSide(-0.5f, -0.25f, 0.0f, 1.0f, 1.0f, 1.0f, 1.0f));
 		sTLSides.add(new STLSide(0.5f, -0.25f, 0.0f, 0.5f, 0.5f, 0.5f, 1.0f));
 		sTLSides.add(new STLSide(0.0f, 0.559016994f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f));
-		STLObjecten.put("O3",new STLTriagle(sTLSides, "O3", 1));
+		tempTriagle = new STLTriagle(sTLSides);
+		tempObj.addSTLTriagle(tempTriagle);
+		
+		//Object 1 dummy
+		STLObjecten.put(tempObj.getName(), tempObj);
 	}
 	
 }

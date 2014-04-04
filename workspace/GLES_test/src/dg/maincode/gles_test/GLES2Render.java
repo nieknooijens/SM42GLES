@@ -83,13 +83,13 @@ public class GLES2Render implements GLSurfaceView.Renderer
 		STLObjectManager.generateDummyObjects();
 		// Define points for equilateral triangles.
 		
-		final float[] triangle1VerticesData = STLObjectManager.FloatDataToFloatVerticesData(STLObjectManager.getFloatDataFromObject("O1"));
+		final float[] triangle1VerticesData = STLObjectManager.FloatDataToFloatVerticesData(STLObjectManager.getObject("Dummy 1").getSTLTriagle().get(0).getSTLObjectFloatData());
 		
 		// This triangle is yellow, cyan, and magenta.
-		final float[] triangle2VerticesData = STLObjectManager.FloatDataToFloatVerticesData(STLObjectManager.getFloatDataFromObject("O2"));
+		final float[] triangle2VerticesData = STLObjectManager.FloatDataToFloatVerticesData(STLObjectManager.getObject("Dummy 1").getSTLTriagle().get(1).getSTLObjectFloatData());
 		
 		// This triangle is white, gray, and black.
-		final float[] triangle3VerticesData = STLObjectManager.FloatDataToFloatVerticesData(STLObjectManager.getFloatDataFromObject("O3"));
+		final float[] triangle3VerticesData = STLObjectManager.FloatDataToFloatVerticesData(STLObjectManager.getObject("Dummy 1").getSTLTriagle().get(2).getSTLObjectFloatData());
 		
 		// Initialize the buffers.
 		mTriangle1Vertices = ByteBuffer.allocateDirect(triangle1VerticesData.length * mBytesPerFloat)
