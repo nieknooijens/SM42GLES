@@ -260,29 +260,19 @@ public class GLES2Render implements GLSurfaceView.Renderer
         float angleInDegrees = (360.0f / 10000.0f) * ((int) time);
         
         // Draw the triangle facing straight on.
-        Matrix.setIdentityM(mModelMatrix, 0);
-        Matrix.rotateM(mModelMatrix, 0, angleInDegrees, 0.0f, 0.0f, 1.0f);        
+        Matrix.setIdentityM(mModelMatrix, 0);      
         drawTriangle(FloatBufferList.get(0));
         
         // Draw one translated a bit down and rotated to be flat on the ground.
-        Matrix.setIdentityM(mModelMatrix, 0);
-        Matrix.translateM(mModelMatrix, 0, 0.0f, -1.0f, 0.0f);
-        Matrix.rotateM(mModelMatrix, 0, 90.0f, 1.0f, 0.0f, 0.0f);
-        Matrix.rotateM(mModelMatrix, 0, angleInDegrees, 0.0f, 0.0f, 1.0f);        
+        Matrix.setIdentityM(mModelMatrix, 0);      
         drawTriangle(FloatBufferList.get(1));
         
         // Draw one translated a bit to the right and rotated to be facing to the left.
         Matrix.setIdentityM(mModelMatrix, 0);
-        Matrix.translateM(mModelMatrix, 0, 1.0f, 0.0f, 0.0f);
-        Matrix.rotateM(mModelMatrix, 0, 90.0f, 0.0f, 1.0f, 0.0f);
-        Matrix.rotateM(mModelMatrix, 0, angleInDegrees, 0.0f, 0.0f, 1.0f);
         drawTriangle(FloatBufferList.get(2));
         
-     // Draw one translated a bit to the right and rotated to be facing to the left.
+        // Draw one translated a bit to the right and rotated to be facing to the left.
         Matrix.setIdentityM(mModelMatrix, 0);
-        Matrix.translateM(mModelMatrix, 0, 1.0f, 0.0f, 0.0f);
-        Matrix.rotateM(mModelMatrix, 0, 90.0f, 0.0f, 1.0f, 0.0f);        
-        Matrix.rotateM(mModelMatrix, 0, angleInDegrees, 0.0f, 0.0f, 1.0f);   
         drawTriangle(FloatBufferList.get(3));
 	}	
 	
