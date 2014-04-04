@@ -1,8 +1,10 @@
 package dg.maincode.gles_test;
 
+import dg.maincode.STLObjecten.STLparser;
 import android.app.Activity;
 import android.app.ActivityManager;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.ConfigurationInfo;
 import android.opengl.GLSurfaceView;
 import android.os.Bundle;
@@ -31,6 +33,10 @@ public class MainActivity extends Activity {
             // Time to get a new phone, OpenGL ES 2.0 not
             // supported.
         }
+        Intent intent = getIntent();
+        
+        String name = intent.getStringExtra("STLfile");
+        STLparser.parseSTL(name);
         
         setContentView(mGLView);
     }

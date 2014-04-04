@@ -65,7 +65,7 @@ public class HomeActivity extends Activity {
                     }
                 }
                 Intent startnext = new Intent(HomeActivity.this, MainActivity.class);
-                intent.putExtra("STLfile", filename);
+                startnext.putExtra("STLfile", "cube.stl");
 				startActivity(startnext);
             }
         }

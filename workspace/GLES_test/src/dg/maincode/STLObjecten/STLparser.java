@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 public class STLparser {
 	
-	private static final File DEFAULT_PATH = Environment.getExternalStorageDirectory();;
+	private static final File DEFAULT_PATH = Environment.getDownloadCacheDirectory();
 	
 	/**
 	 * parse the STL file based on the default path and name.
@@ -33,6 +33,7 @@ public class STLparser {
 		    Log.w("Filecontent",text.toString());
 		}
 		catch (IOException e) {
+			Log.w("IOExeption",e.getMessage());
 		    //You'll need to add proper error handling here
 		}
 	}
