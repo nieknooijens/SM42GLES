@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="DG.maincode.managers.STLTriagleManager"/>
-<fullyQualifiedTypeName name="java.util.HashMap"/>
 <fullyQualifiedTypeName name="DG.maincode.STLObjecten.STLTriagle"/>
 <fullyQualifiedTypeName name="DG.maincode.STLObjecten.STLObject"/>
 <fullyQualifiedTypeName name="DG.maincode.managers.STLObjectManager"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="dg.maincode.managers.STLObjectManager"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
 </qualifiedTypeNameHistroy>
