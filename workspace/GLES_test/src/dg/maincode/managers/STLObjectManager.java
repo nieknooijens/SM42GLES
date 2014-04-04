@@ -1,5 +1,8 @@
 package dg.maincode.managers;
 
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
+import java.nio.FloatBuffer;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -9,9 +12,13 @@ import dg.maincode.STLObjecten.STLSide;
 
 public class STLObjectManager {	
 	static private HashMap<String,STLObject> STLObjecten;
+	static private ArrayList<FloatBuffer> FloatBufferList;
+	private static final int mBytesPerFloat = 4;
+	
 	static{
 		//anything static that needs to be initialized for this class;
 		STLObjecten = new HashMap<String, STLObject>();
+		FloatBufferList = new ArrayList<FloatBuffer>();
 	}
 	
 	static public void addNewObject(ArrayList<STLSide> sTLSides, String name, int iD){
@@ -92,4 +99,18 @@ public class STLObjectManager {
 		STLObjecten.put(tempObj.getName(), tempObj);
 	}
 	
+	static public ArrayList<FloatBuffer> getBufferObjectData(String name){
+		HashMap<Integer, STLTriagle> tempObj = getObject(name).getSTLTriagle();
+		STLTriagle tempTriagle = null;
+		int index = 0;
+		while((tempTriagle = tempObj.get(index)) != null){
+			float[] triangleVerticesData = STLObjectManager.FloatDataToFloatVerticesData(tempTriagle.getSTLObjectFloatData());
+			FloatBuffer mTriangleVertices = ByteBuffer.allocateDirect(triangleVerticesData.length * mBytesPerFloat)
+			        .order(ByteOrder.nativeOrder()).asFloatBuffer();
+			mTriangleVertices.put(triangleVerticesData).position(0);
+			FloatBufferList.add(mTriangleVertices);
+			index++;
+		}
+		return FloatBufferList;
+	}
 }

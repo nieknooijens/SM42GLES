@@ -38,12 +38,7 @@ public class GLES2Render implements GLSurfaceView.Renderer
 	
 	/** Allocate storage for the final combined matrix. This will be passed into the shader program. */
 	private float[] mMVPMatrix = new float[16];
-	
-	/** Store our model data in a float buffer. */
-	private final FloatBuffer mTriangle1Vertices;
-	private final FloatBuffer mTriangle2Vertices;
-	private final FloatBuffer mTriangle3Vertices;
-	
+		
 	/** Store our float buffers in a list */
 	private ArrayList<FloatBuffer> FloatBufferList;
 
@@ -81,32 +76,7 @@ public class GLES2Render implements GLSurfaceView.Renderer
 	{	
 		FloatBufferList = new ArrayList<FloatBuffer>();
 		STLObjectManager.generateDummyObjects();
-		// Define points for equilateral triangles.
-		
-		final float[] triangle1VerticesData = STLObjectManager.FloatDataToFloatVerticesData(STLObjectManager.getObject("Dummy 1").getSTLTriagle().get(0).getSTLObjectFloatData());
-		
-		// This triangle is yellow, cyan, and magenta.
-		final float[] triangle2VerticesData = STLObjectManager.FloatDataToFloatVerticesData(STLObjectManager.getObject("Dummy 1").getSTLTriagle().get(1).getSTLObjectFloatData());
-		
-		// This triangle is white, gray, and black.
-		final float[] triangle3VerticesData = STLObjectManager.FloatDataToFloatVerticesData(STLObjectManager.getObject("Dummy 1").getSTLTriagle().get(2).getSTLObjectFloatData());
-		
-		// Initialize the buffers.
-		mTriangle1Vertices = ByteBuffer.allocateDirect(triangle1VerticesData.length * mBytesPerFloat)
-        .order(ByteOrder.nativeOrder()).asFloatBuffer();
-		mTriangle2Vertices = ByteBuffer.allocateDirect(triangle2VerticesData.length * mBytesPerFloat)
-        .order(ByteOrder.nativeOrder()).asFloatBuffer();
-		mTriangle3Vertices = ByteBuffer.allocateDirect(triangle3VerticesData.length * mBytesPerFloat)
-        .order(ByteOrder.nativeOrder()).asFloatBuffer();
-					
-		mTriangle1Vertices.put(triangle1VerticesData).position(0);
-		mTriangle2Vertices.put(triangle2VerticesData).position(0);
-		mTriangle3Vertices.put(triangle3VerticesData).position(0);
-		
-		FloatBufferList.add(mTriangle1Vertices);
-		FloatBufferList.add(mTriangle2Vertices);
-		FloatBufferList.add(mTriangle3Vertices);
-		
+		FloatBufferList = STLObjectManager.getBufferObjectData("Dummy 1");
 	}
 	
 	@Override
