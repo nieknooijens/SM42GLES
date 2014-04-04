@@ -277,6 +277,13 @@ public class GLES2Render implements GLSurfaceView.Renderer
         Matrix.rotateM(mModelMatrix, 0, 90.0f, 0.0f, 1.0f, 0.0f);
         Matrix.rotateM(mModelMatrix, 0, angleInDegrees, 0.0f, 0.0f, 1.0f);
         drawTriangle(FloatBufferList.get(2));
+        
+     // Draw one translated a bit to the right and rotated to be facing to the left.
+        Matrix.setIdentityM(mModelMatrix, 0);
+        Matrix.translateM(mModelMatrix, 0, 1.0f, 0.0f, 0.0f);
+        Matrix.rotateM(mModelMatrix, 0, 90.0f, 0.0f, 1.0f, 0.0f);        
+        Matrix.rotateM(mModelMatrix, 0, angleInDegrees, 0.0f, 0.0f, 1.0f);   
+        drawTriangle(FloatBufferList.get(3));
 	}	
 	
 	/**

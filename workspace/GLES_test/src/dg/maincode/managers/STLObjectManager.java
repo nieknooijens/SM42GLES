@@ -73,25 +73,33 @@ public class STLObjectManager {
 		
 		//T1 dummy
 		ArrayList<STLSide> sTLSides = new ArrayList<STLSide>();
-		sTLSides.add(new STLSide(-0.5f, -0.25f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f));
-		sTLSides.add(new STLSide(0.5f, -0.25f, 0.0f, 0.0f, 0.0f, 1.0f, 1.0f));
-		sTLSides.add(new STLSide(0.0f, 0.559016994f, 0.0f, 0.0f, 1.0f, 0.0f, 1.0f));
+		sTLSides.add(new STLSide(-1.5f, -1.5f, 1.4f, 1.0f, 0.0f, 0.0f, 1.0f));
+		sTLSides.add(new STLSide(0.0f, 1.7f, 1.4f, 0.0f, 0.0f, 1.0f, 1.0f));
+		sTLSides.add(new STLSide(1.5f, -1.5f, 1.4f, 0.0f, 1.0f, 0.0f, 1.0f));
 		tempTriagle = new STLTriagle(sTLSides);
 		tempObj.addSTLTriagle(tempTriagle);
 		
 		//T2 dummy
 		sTLSides = new ArrayList<STLSide>();
-		sTLSides.add(new STLSide(-0.5f, -0.25f, 0.0f, 1.0f, 1.0f, 0.0f, 1.0f));
-		sTLSides.add(new STLSide(0.5f, -0.25f, 0.0f, 0.0f, 1.0f, 1.0f, 1.0f));
-		sTLSides.add(new STLSide(0.0f, 0.559016994f, 0.0f, 1.0f, 0.0f, 1.0f, 1.0f));
+		sTLSides.add(new STLSide(-1.5f, -1.5f, 1.4f, 1.0f, 1.0f, 0.0f, 1.0f));
+		sTLSides.add(new STLSide(1.5f, 1.5f, 1.4f, 0.0f, 1.0f, 1.0f, 1.0f));
+		sTLSides.add(new STLSide(0.0f, 0.0f, -1.4f, 1.0f, 0.0f, 1.0f, 1.0f));
 		tempTriagle = new STLTriagle(sTLSides);
 		tempObj.addSTLTriagle(tempTriagle);
 		
 		//T3 dummy
 		sTLSides = new ArrayList<STLSide>();
-		sTLSides.add(new STLSide(-0.5f, -0.25f, 0.0f, 1.0f, 1.0f, 1.0f, 1.0f));
-		sTLSides.add(new STLSide(0.5f, -0.25f, 0.0f, 0.5f, 0.5f, 0.5f, 1.0f));
-		sTLSides.add(new STLSide(0.0f, 0.559016994f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f));
+		sTLSides.add(new STLSide(-1.5f, -1.5f, 1.4f, 1.0f, 1.0f, 1.0f, 1.0f));
+		sTLSides.add(new STLSide(0.0f, 1.7f, 1.4f, 0.5f, 0.5f, 0.5f, 1.0f));
+		sTLSides.add(new STLSide(0.0f, 0.0f, -1.4f, 0.0f, 0.0f, 0.0f, 1.0f));
+		tempTriagle = new STLTriagle(sTLSides);
+		tempObj.addSTLTriagle(tempTriagle);
+		
+		//T4 dummy
+		sTLSides = new ArrayList<STLSide>();
+		sTLSides.add(new STLSide(0.0f, 1.7f, 1.4f, 1.0f, 1.0f, 1.0f, 1.0f));
+		sTLSides.add(new STLSide(-1.5f, -1.5f, 1.4f, 0.5f, 0.5f, 0.5f, 1.0f));
+		sTLSides.add(new STLSide(0.0f, 0.0f, -1.4f, 0.0f, 0.0f, 0.0f, 1.0f));
 		tempTriagle = new STLTriagle(sTLSides);
 		tempObj.addSTLTriagle(tempTriagle);
 		
