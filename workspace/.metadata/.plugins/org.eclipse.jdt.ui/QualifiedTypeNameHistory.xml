@@ -7,6 +7,7 @@
 <fullyQualifiedTypeName name="java.util.HashMap"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="dg.maincode.STLObjecten.STLObject"/>
+<<<<<<< HEAD
 <fullyQualifiedTypeName name="dg.maincode.STLObjecten.STLTriagle"/>
 <fullyQualifiedTypeName name="dg.maincode.managers.STLObjectManager"/>
 <fullyQualifiedTypeName name="android.os.Environment"/>
@@ -16,4 +17,15 @@
 <fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="android.widget.Toast"/>
 <fullyQualifiedTypeName name="android.util.Log"/>
+=======
+<fullyQualifiedTypeName name="android.content.BroadcastReceiver"/>
+<fullyQualifiedTypeName name="android.app.DownloadManager.Query"/>
+<fullyQualifiedTypeName name="android.database.Cursor"/>
+<fullyQualifiedTypeName name="android.widget.ImageView"/>
+<fullyQualifiedTypeName name="android.content.IntentFilter"/>
+<fullyQualifiedTypeName name="android.app.DownloadManager"/>
+<fullyQualifiedTypeName name="android.content.Context"/>
+<fullyQualifiedTypeName name="android.net.Uri"/>
+<fullyQualifiedTypeName name="android.app.DownloadManager.Request"/>
+>>>>>>> e3acc4b940358d71b6d1cc27bf95d317c2f78e42
 </qualifiedTypeNameHistroy>
