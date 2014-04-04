@@ -1,4 +1,13 @@
+<<<<<<< HEAD
+INDEX VERSION 1.126+/mnt/GAMES/overig/adt-bundle-linux-x86_64-20131030/workspace/SM42GLES/workspace/.metadata/.plugins/org.eclipse.jdt.core
+4174878129.index
+1179406538.index
+=======
 INDEX VERSION 1.126+C:\Users\Luxiam\Documents\GitHub\SM42GLES\workspace\.metadata\.plugins\org.eclipse.jdt.core
+<<<<<<< HEAD
 1897969322.index
 3132172775.index
 1530031697.index
+=======
+>>>>>>> a439d5a8794285841fbc4e49c66504984a7c971f
+>>>>>>> 24a0c7d6368a34d79f70cd6943eb5d91fcc1638e
