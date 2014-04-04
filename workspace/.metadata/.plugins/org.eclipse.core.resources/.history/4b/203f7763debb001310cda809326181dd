@@ -2,12 +2,12 @@ package dg.maincode.STLObjecten;
 
 import java.util.ArrayList;
 
-public class STLTriagle {
+public class STLObject {
 	private ArrayList<STLSide> STLSides;
 	private String name;
 	private int ID;
 	
-	public STLTriagle(ArrayList<STLSide> sTLSides, String name, int iD) {
+	public STLObject(ArrayList<STLSide> sTLSides, String name, int iD) {
 		super();
 		STLSides = sTLSides;
 		this.name = name;
