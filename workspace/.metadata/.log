@@ -3402,3 +3402,13 @@ org.eclipse.core.internal.resources.ResourceException: A resource already exists
 	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:121)
 !SUBENTRY 1 org.eclipse.core.resources 4 272 2014-04-04 14:14:03.422
 !MESSAGE A resource already exists on disk '/mnt/GAMES/overig/adt-bundle-linux-x86_64-20131030/workspace/SM42GLES/workspace/GLES_test/.settings'.
+!SESSION 2014-04-04 14:38:27.825 -----------------------------------------------
+eclipse.buildId=v22.3.0-887826
+java.version=1.7.0_17
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=nl_NL
+Framework arguments:  -product com.android.ide.eclipse.adt.package.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product com.android.ide.eclipse.adt.package.product
+
+!ENTRY org.eclipse.core.resources 2 10035 2014-04-04 14:38:29.262
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
