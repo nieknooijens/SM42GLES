@@ -4,7 +4,9 @@
 <fullyQualifiedTypeName name="DG.maincode.STLObjecten.STLTriagle"/>
 <fullyQualifiedTypeName name="DG.maincode.STLObjecten.STLObject"/>
 <fullyQualifiedTypeName name="DG.maincode.managers.STLObjectManager"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="dg.maincode.managers.STLObjectManager"/>
 <fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="dg.maincode.STLObjecten.STLTriagle"/>
+<fullyQualifiedTypeName name="dg.maincode.STLObjecten.STLObject"/>
 </qualifiedTypeNameHistroy>
