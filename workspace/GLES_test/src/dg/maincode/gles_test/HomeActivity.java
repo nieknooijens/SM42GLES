@@ -60,12 +60,12 @@ public class HomeActivity extends Activity {
                     int status = c.getInt(c.getColumnIndex(DownloadManager.COLUMN_STATUS));
                     if (status == DownloadManager.STATUS_SUCCESSFUL) {
                         // process download
-                        filename = c.getString(c.getColumnIndex(DownloadManager.COLUMN_TITLE));
+                        filename = c.getString(c.getColumnIndex(DownloadManager.COLUMN_LOCAL_FILENAME));
                         // get other required data by changing the constant passed to getColumnIndex
                     }
                 }
                 Intent startnext = new Intent(HomeActivity.this, MainActivity.class);
-                startnext.putExtra("STLfile", "cube.stl");
+                startnext.putExtra("STLfile", filename);
 				startActivity(startnext);
             }
         }
