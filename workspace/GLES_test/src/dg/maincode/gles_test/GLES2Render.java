@@ -75,8 +75,8 @@ public class GLES2Render implements GLSurfaceView.Renderer
 	public GLES2Render()
 	{	
 		FloatBufferList = new ArrayList<FloatBuffer>();
-		STLObjectManager.generateDummyObjects();
-		FloatBufferList = STLObjectManager.getBufferObjectData("Dummy 1");
+		//STLObjectManager.generateDummyObjects();
+		FloatBufferList = STLObjectManager.getBufferObjectData("cube");
 	}
 	
 	@Override

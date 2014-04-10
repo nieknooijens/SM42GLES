@@ -18,6 +18,11 @@ public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        
+Intent intent = getIntent();
+        
+        String name = intent.getStringExtra("STLfile");
+        STLparser.parseSTL(name);
  
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(
@@ -33,10 +38,7 @@ public class MainActivity extends Activity {
             // Time to get a new phone, OpenGL ES 2.0 not
             // supported.
         }
-        Intent intent = getIntent();
         
-        String name = intent.getStringExtra("STLfile");
-        STLparser.parseSTL(name);
         
         setContentView(mGLView);
     }
