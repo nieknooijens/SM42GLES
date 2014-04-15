@@ -21,6 +21,8 @@ import android.os.SystemClock;
  */
 public class GLES2Render implements GLSurfaceView.Renderer 
 {
+	String objName;
+	
 	/**
 	 * Store the model matrix. This matrix is used to move models from object space (where each model can be thought
 	 * of being located at the center of the universe) to world space.
@@ -74,9 +76,10 @@ public class GLES2Render implements GLSurfaceView.Renderer
 	 */
 	public GLES2Render(String objName)
 	{	
+		this.objName = objName;
 		FloatBufferList = new ArrayList<FloatBuffer>();
 		//STLObjectManager.generateDummyObjects();
-		FloatBufferList = STLObjectManager.getBufferObjectData(objName);
+		FloatBufferList = STLObjectManager.getBufferObjectData(this.objName);
 	}
 	
 	@Override
@@ -260,9 +263,12 @@ public class GLES2Render implements GLSurfaceView.Renderer
         float angleInDegrees = (360.0f / 10000.0f) * ((int) time);
         
         // Draw the triangle facing straight on.
-        Matrix.setIdentityM(mModelMatrix, 0);      
+              
         for(FloatBuffer fb : FloatBufferList)
         {
+        	Matrix.setIdentityM(mModelMatrix, 0);
+        	Matrix.scaleM(mModelMatrix, 0, 0.01F, 0.01F, 0.01F);
+        	Matrix.rotateM(mModelMatrix, 0, angleInDegrees, 0.0F, 1.0F, 0.0F);
         	drawTriangle(fb);
         }
        

@@ -42,7 +42,7 @@ public class STLparser {
 		    	}
 		    	if(split[0].equals("vertex"))
 		    	{
-		    		STLSide side = new STLSide(Float.parseFloat(split[1]), Float.parseFloat(split[2]), Float.parseFloat(split[3]), 0f, 0f, 0f, 0f);
+		    		STLSide side = new STLSide(Float.parseFloat(split[1]), Float.parseFloat(split[2]), Float.parseFloat(split[3]), 1f, 0f, 0f, 0f);
 		    		Triagle.addSide(side);
 		    	}
 		    	if(split[0].equals("endfacet"))
