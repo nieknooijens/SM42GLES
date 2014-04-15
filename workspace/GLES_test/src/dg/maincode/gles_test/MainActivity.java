@@ -22,7 +22,7 @@ public class MainActivity extends Activity {
 Intent intent = getIntent();
         
         String name = intent.getStringExtra("STLfile");
-        STLparser.parseSTL(name);
+        String objName = STLparser.parseSTL(name);
  
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(
@@ -33,7 +33,7 @@ Intent intent = getIntent();
             mGLView = new GLSurfaceView(this);
             mGLView.setEGLContextClientVersion(2);
             mGLView.setPreserveEGLContextOnPause(true);
-            mGLView.setRenderer(new GLES2Render());
+            mGLView.setRenderer(new GLES2Render(objName));
         } else {
             // Time to get a new phone, OpenGL ES 2.0 not
             // supported.

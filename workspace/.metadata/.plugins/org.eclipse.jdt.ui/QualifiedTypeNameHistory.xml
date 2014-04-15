@@ -1,17 +1,2 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<<<<<<< HEAD
-<qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="android.content.Intent"/>
-<fullyQualifiedTypeName name="dg.maincode.STLObjecten.STLparser"/>
-<fullyQualifiedTypeName name="java.io.InputStream"/>
-<fullyQualifiedTypeName name="java.io.FileInputStream"/>
-<fullyQualifiedTypeName name="dg.maincode.STLObjecten.STLTriagle"/>
-<fullyQualifiedTypeName name="dg.maincode.STLObjecten.STLSide"/>
-<fullyQualifiedTypeName name="dg.maincode.STLObjecten.STLObject"/>
-<fullyQualifiedTypeName name="java.lang.Object"/>
-<fullyQualifiedTypeName name="dg.maincode.managers.STLObjectManager"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
-</qualifiedTypeNameHistroy>
-=======
 <qualifiedTypeNameHistroy/>
->>>>>>> fb6cb3fc84d0f6e52e76afc8e7e59c3ffb79ef96

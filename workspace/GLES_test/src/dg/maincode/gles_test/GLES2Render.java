@@ -72,11 +72,11 @@ public class GLES2Render implements GLSurfaceView.Renderer
 	/**
 	 * Initialize the model data.
 	 */
-	public GLES2Render()
+	public GLES2Render(String objName)
 	{	
 		FloatBufferList = new ArrayList<FloatBuffer>();
 		//STLObjectManager.generateDummyObjects();
-		FloatBufferList = STLObjectManager.getBufferObjectData("cube");
+		FloatBufferList = STLObjectManager.getBufferObjectData(objName);
 	}
 	
 	@Override
@@ -261,19 +261,11 @@ public class GLES2Render implements GLSurfaceView.Renderer
         
         // Draw the triangle facing straight on.
         Matrix.setIdentityM(mModelMatrix, 0);      
-        drawTriangle(FloatBufferList.get(0));
-        
-        // Draw one translated a bit down and rotated to be flat on the ground.
-        Matrix.setIdentityM(mModelMatrix, 0);      
-        drawTriangle(FloatBufferList.get(1));
-        
-        // Draw one translated a bit to the right and rotated to be facing to the left.
-        Matrix.setIdentityM(mModelMatrix, 0);
-        drawTriangle(FloatBufferList.get(2));
-        
-        // Draw one translated a bit to the right and rotated to be facing to the left.
-        Matrix.setIdentityM(mModelMatrix, 0);
-        drawTriangle(FloatBufferList.get(3));
+        for(FloatBuffer fb : FloatBufferList)
+        {
+        	drawTriangle(fb);
+        }
+       
 	}	
 	
 	/**

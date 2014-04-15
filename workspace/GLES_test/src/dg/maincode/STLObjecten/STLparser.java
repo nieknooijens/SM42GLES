@@ -2,26 +2,20 @@ package dg.maincode.STLObjecten;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.InputStream;
-
 import dg.maincode.managers.STLObjectManager;
 
 import android.os.Environment;
 import android.util.Log;
-import android.widget.Toast;
 
 public class STLparser {
-	
-	private static final File DEFAULT_PATH = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
-	
+		
 	/**
 	 * parse the STL file based on the default path and name.
 	 * @param name
 	 */
-	public static void parseSTL(String name){
+	public static String parseSTL(String name){
 		File STLFile = new File(name);
 		//Read text from file
 		StringBuilder text = new StringBuilder();
@@ -36,11 +30,12 @@ public class STLparser {
 
 		    while ((line = br.readLine()) != null) {
 		    	line = line.trim();
+		    	line = line.trim().replaceAll(" +", " ");
 		    	String[] split = line.split(" ");
 		    	
 		    	if(split[0].equals("solid")){
 		    		newObjectname = split[1];
-		    		obj.setName("cube");
+		    		obj.setName(newObjectname);
 		    	}
 		    	if(split[0].equals("facet") && split[1].equals("normal")){
 		    		Triagle.setNormal(new float[]{Float.parseFloat(split[2]),Float.parseFloat(split[3]),Float.parseFloat(split[4])});
@@ -60,10 +55,12 @@ public class STLparser {
 		    }
 		    STLObjectManager.addNewObject(obj);
 		    Log.w("NewObject",STLObjectManager.getObject(newObjectname).getName());
+		    return newObjectname;
 		}
 		catch (IOException e) {
 			Log.w("IOExeption",e.getMessage());
 		    //You'll need to add proper error handling here
 		}
+		return "error";
 	}
 }
