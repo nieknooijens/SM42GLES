@@ -1,5 +1,6 @@
 package dg.maincode.gles_test;
 
+import android.graphics.Color;
 import android.app.Activity;
 import android.app.DownloadManager;
 import android.app.DownloadManager.Request;
@@ -10,10 +11,13 @@ import android.content.IntentFilter;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.SeekBar;
+import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.Toast;
 
 public class HomeActivity extends Activity {
@@ -24,9 +28,31 @@ public class HomeActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.home_activity_layout);
 		mDownload = new DownLoadComplte();
-		Button startGLbutton = (Button) findViewById(R.id.ButtonStartGL);
-		startGLbutton.setOnClickListener(new OnClickListener() {
+		SeekBar seek = (SeekBar) findViewById(R.id.ColorSlider);
+		seek.setOnSeekBarChangeListener(new OnSeekBarChangeListener() {
 			
+			@Override
+			public void onStopTrackingTouch(SeekBar seekBar) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void onStartTrackingTouch(SeekBar seekBar) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void onProgressChanged(SeekBar seekBar, int progress,boolean fromUser) {
+				Log.d("Color: ", Integer.toString(progress));
+				
+			}
+		});
+		
+		
+		Button startGLbutton = (Button) findViewById(R.id.ButtonStartGL);
+		startGLbutton.setOnClickListener(new OnClickListener() {			
 			@Override
 			public void onClick(View v) {
 				//download stuff
@@ -41,6 +67,7 @@ public class HomeActivity extends Activity {
 		        DownloadManager.ACTION_DOWNLOAD_COMPLETE));
 			}
 		});
+		
 		
 	}
 	private class DownLoadComplte extends BroadcastReceiver {
@@ -64,6 +91,10 @@ public class HomeActivity extends Activity {
                         // get other required data by changing the constant passed to getColumnIndex
                     }
                 }
+                SeekBar seek = (SeekBar) findViewById(R.id.ColorSlider);
+                int seekbarvalue = seek.getProgress();
+                float [] hue = { ((((seekbarvalue - 0) * (255-0))/(100-0)) +0),255f,255f}; //convert value between 0-100 to 0-255
+                int col = Color.HSVToColor(hue);
                 Intent startnext = new Intent(HomeActivity.this, MainActivity.class);
                 startnext.putExtra("STLfile", filename);
 				startActivity(startnext);
