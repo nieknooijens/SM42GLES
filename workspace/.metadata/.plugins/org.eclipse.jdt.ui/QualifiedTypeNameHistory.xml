@@ -4,4 +4,10 @@
 <fullyQualifiedTypeName name="dg.maincode.STLObjecten.STLparser"/>
 <fullyQualifiedTypeName name="java.io.InputStream"/>
 <fullyQualifiedTypeName name="java.io.FileInputStream"/>
+<fullyQualifiedTypeName name="dg.maincode.STLObjecten.STLTriagle"/>
+<fullyQualifiedTypeName name="dg.maincode.STLObjecten.STLSide"/>
+<fullyQualifiedTypeName name="dg.maincode.STLObjecten.STLObject"/>
+<fullyQualifiedTypeName name="java.lang.Object"/>
+<fullyQualifiedTypeName name="dg.maincode.managers.STLObjectManager"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
 </qualifiedTypeNameHistroy>
