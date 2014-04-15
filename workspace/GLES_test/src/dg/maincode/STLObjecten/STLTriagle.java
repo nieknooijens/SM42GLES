@@ -12,6 +12,12 @@ public class STLTriagle {
 		normal = new float[3];
 	}
 	
+	public STLTriagle() {
+		super();
+		STLSides = new ArrayList<STLSide>();
+		normal = new float[3];
+	}
+	
 	public ArrayList<STLSide> getSTLTriagles() {
 		return STLSides;
 	}
@@ -35,5 +41,9 @@ public class STLTriagle {
 	public void setNormal(float[] normal) {
 		this.normal = normal;
 	}		
+	
+	public void addSide(STLSide object){
+		STLSides.add(object);
+	}
 	
 }

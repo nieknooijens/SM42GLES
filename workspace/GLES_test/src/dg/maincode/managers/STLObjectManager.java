@@ -21,8 +21,8 @@ public class STLObjectManager {
 		FloatBufferList = new ArrayList<FloatBuffer>();
 	}
 	
-	static public void addNewObject(ArrayList<STLSide> sTLSides, String name, int iD){
-		//STLObjecten.put(name, new STLTriagle(sTLSides, name, iD));
+	static public void addNewObject(STLObject object){
+		STLObjecten.put(object.getName(),object);
 	}
 	
 	static public STLObject getObject(String name){
