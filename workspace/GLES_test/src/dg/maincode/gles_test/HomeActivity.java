@@ -28,27 +28,7 @@ public class HomeActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.home_activity_layout);
 		mDownload = new DownLoadComplte();
-		SeekBar seek = (SeekBar) findViewById(R.id.ColorSlider);
-		seek.setOnSeekBarChangeListener(new OnSeekBarChangeListener() {
-			
-			@Override
-			public void onStopTrackingTouch(SeekBar seekBar) {
-				// TODO Auto-generated method stub
-				
-			}
-			
-			@Override
-			public void onStartTrackingTouch(SeekBar seekBar) {
-				// TODO Auto-generated method stub
-				
-			}
-			
-			@Override
-			public void onProgressChanged(SeekBar seekBar, int progress,boolean fromUser) {
-				Log.d("Color: ", Integer.toString(progress));
-				
-			}
-		});
+		
 		
 		
 		Button startGLbutton = (Button) findViewById(R.id.ButtonStartGL);
@@ -91,10 +71,12 @@ public class HomeActivity extends Activity {
                         // get other required data by changing the constant passed to getColumnIndex
                     }
                 }
+                /**
                 SeekBar seek = (SeekBar) findViewById(R.id.ColorSlider);
                 int seekbarvalue = seek.getProgress();
                 float [] hue = { ((((seekbarvalue - 0) * (255-0))/(100-0)) +0),255f,255f}; //convert value between 0-100 to 0-255
                 int col = Color.HSVToColor(hue);
+                */
                 Intent startnext = new Intent(HomeActivity.this, MainActivity.class);
                 startnext.putExtra("STLfile", filename);
 				startActivity(startnext);
