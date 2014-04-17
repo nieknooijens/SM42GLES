@@ -19,7 +19,7 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         
-Intent intent = getIntent();
+        Intent intent = getIntent();
         
         String name = intent.getStringExtra("STLfile");
         String objName = STLparser.parseSTL(name);

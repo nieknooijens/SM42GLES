@@ -13,12 +13,15 @@ import dg.maincode.STLObjecten.STLSide;
 public class STLObjectManager {	
 	static private HashMap<String,STLObject> STLObjecten;
 	static private ArrayList<FloatBuffer> FloatBufferList;
+	static private ArrayList<FloatBuffer> FloatBufferListNormals;
 	private static final int mBytesPerFloat = 4;
+	
 	
 	static{
 		//anything static that needs to be initialized for this class;
 		STLObjecten = new HashMap<String, STLObject>();
 		FloatBufferList = new ArrayList<FloatBuffer>();
+		FloatBufferListNormals = new ArrayList<FloatBuffer>();
 	}
 	
 	static public void addNewObject(STLObject object){
@@ -120,5 +123,20 @@ public class STLObjectManager {
 			index++;
 		}
 		return FloatBufferList;
+	}
+
+	public static ArrayList<FloatBuffer> getBufferNormalsData(String name) {
+		HashMap<Integer, STLTriagle> tempTriagles = getObject(name).getSTLTriagle();
+		STLTriagle tempTriagle = null;
+		int index = 0;
+		while((tempTriagle = tempTriagles.get(index)) != null){
+			float[] triangleNormalData = tempTriagle.getNormal();
+			FloatBuffer mTriangleVertices = ByteBuffer.allocateDirect(triangleNormalData.length * mBytesPerFloat)
+			        .order(ByteOrder.nativeOrder()).asFloatBuffer();
+			mTriangleVertices.put(triangleNormalData).position(0);
+			FloatBufferListNormals.add(mTriangleVertices);
+			index++;
+		}
+		return FloatBufferListNormals;
 	}
 }
